@@ -1,3 +1,5 @@
+# This file is used to authenticate the AWS account with the help of access key and secret key.
+
 terraform {
 
   required_providers {

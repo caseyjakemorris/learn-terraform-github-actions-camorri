@@ -23,7 +23,7 @@ resource "aws_ec2_transit_gateway" "tokyo_tgw" {
 }
 
 output "tokyo_tgw_id" {
-  value = aws_ec2_transit_gateway.tokyo_tgw.id
+  value       = aws_ec2_transit_gateway.tokyo_tgw.id
   description = "value of the Tokyo Transit Gateway ID"
 }
 
@@ -32,9 +32,9 @@ output "tokyo_tgw_id" {
 resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tgw_attachment" {
   provider = aws.tokyo
 
-  subnet_ids         = [aws_subnet.tokyo-a-public.id, aws_subnet.tokyo-d-public.id]
-  transit_gateway_id = aws_ec2_transit_gateway.tokyo_tgw.id
-  vpc_id             = aws_vpc.tokyo.id
+  subnet_ids                                      = [aws_subnet.tokyo-a-public.id, aws_subnet.tokyo-d-public.id]
+  transit_gateway_id                              = aws_ec2_transit_gateway.tokyo_tgw.id
+  vpc_id                                          = aws_vpc.tokyo.id
   transit_gateway_default_route_table_association = true
   transit_gateway_default_route_table_propagation = true
 
@@ -80,14 +80,14 @@ resource "aws_ec2_transit_gateway_route_table" "tokyo_tgw_route_table" {
 # }
 
 resource "aws_ec2_transit_gateway_route" "new-york_route" {
-  provider = aws.tokyo
+  provider                       = aws.tokyo
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo_tgw_route_table.id
   destination_cidr_block         = aws_vpc.new-york.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.tokyo_tgw_attachment.id
 }
 
 resource "aws_ec2_transit_gateway_route" "new-york_peering_route" {
-  provider = aws.tokyo
+  provider                       = aws.tokyo
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.tokyo_tgw_route_table.id
   destination_cidr_block         = aws_vpc.tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.tokyo_tgw_attachment.id
@@ -107,7 +107,7 @@ resource "aws_ec2_transit_gateway" "new-york_tgw" {
 }
 
 output "new-york_tgw_id" {
-  value = aws_ec2_transit_gateway.new-york_tgw.id
+  value       = aws_ec2_transit_gateway.new-york_tgw.id
   description = "value of the New York Transit Gateway ID"
 }
 
@@ -116,9 +116,9 @@ output "new-york_tgw_id" {
 resource "aws_ec2_transit_gateway_vpc_attachment" "new-york_tgw_attachment" {
   provider = aws.new-york
 
-  subnet_ids         = [aws_subnet.new-york-a-public.id, aws_subnet.new-york-b-public.id]
-  transit_gateway_id = aws_ec2_transit_gateway.new-york_tgw.id
-  vpc_id             = aws_vpc.new-york.id
+  subnet_ids                                      = [aws_subnet.new-york-a-public.id, aws_subnet.new-york-b-public.id]
+  transit_gateway_id                              = aws_ec2_transit_gateway.new-york_tgw.id
+  vpc_id                                          = aws_vpc.new-york.id
   transit_gateway_default_route_table_association = true
   transit_gateway_default_route_table_propagation = true
 
@@ -132,7 +132,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "new-york_tgw_attachment" {
 # Create transit gateway route table for New York
 
 resource "aws_ec2_transit_gateway_route_table" "new-york_tgw_route_table" {
-  provider = aws.new-york
+  provider           = aws.new-york
   transit_gateway_id = aws_ec2_transit_gateway.new-york_tgw.id
   tags = {
     Name    = "NewYork_TGW_Route_Table"
@@ -143,16 +143,16 @@ resource "aws_ec2_transit_gateway_route_table" "new-york_tgw_route_table" {
 
 # Add a route to the New York VPC
 resource "aws_ec2_transit_gateway_peering_attachment" "x-new-york-tokyo_tgw_peering_attachment" {
-  provider = aws.new-york
-  transit_gateway_id = aws_ec2_transit_gateway.new-york_tgw.id
-  peer_transit_gateway_id = aws_ec2_transit_gateway.tokyo_tgw.id   # Placeholder, replace with actual TGW ID from New York
-  peer_region = "ap-northeast-1"  
+  provider                = aws.new-york
+  transit_gateway_id      = aws_ec2_transit_gateway.new-york_tgw.id
+  peer_transit_gateway_id = aws_ec2_transit_gateway.tokyo_tgw.id # Placeholder, replace with actual TGW ID from New York
+  peer_region             = "ap-northeast-1"
 }
 
 # Create transit gateway peering attachment acceptor for Tokyo
 
 resource "aws_ec2_transit_gateway_peering_attachment_accepter" "x-tokyo_tgw_peering_attachment_accepter" {
-  provider = aws.tokyo
+  provider                      = aws.tokyo
   transit_gateway_attachment_id = aws_ec2_transit_gateway_peering_attachment.x-new-york-tokyo_tgw_peering_attachment.id
 
   tags = {
@@ -163,14 +163,14 @@ resource "aws_ec2_transit_gateway_peering_attachment_accepter" "x-tokyo_tgw_peer
 }
 
 resource "aws_ec2_transit_gateway_route" "new_york-tokyo_route" {
-  provider = aws.new-york
+  provider                       = aws.new-york
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.new-york_tgw_route_table.id
   destination_cidr_block         = aws_vpc.new-york.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.new-york_tgw_attachment.id
 }
 
 resource "aws_ec2_transit_gateway_route" "new_york-tokyo_peering_route" {
-  provider = aws.new-york
+  provider                       = aws.new-york
   transit_gateway_route_table_id = aws_ec2_transit_gateway_route_table.new-york_tgw_route_table.id
   destination_cidr_block         = aws_vpc.tokyo.cidr_block
   transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.new-york_tgw_attachment.id

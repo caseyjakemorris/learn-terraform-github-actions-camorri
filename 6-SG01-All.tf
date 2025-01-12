@@ -3,7 +3,7 @@ resource "aws_security_group" "tokyo-SG01-ASG01" {
   name        = "tokyo-SG01-ASG01"
   description = "tokyo-SG01-ASG01"
   vpc_id      = aws_vpc.tokyo.id
-  provider = aws.tokyo
+  provider    = aws.tokyo
 
   ingress {
     description = ""
@@ -40,7 +40,7 @@ resource "aws_security_group" "tokyo-SG02-LB01" {
   name        = "tokyo-SG02-LB01"
   description = "tokyo-SG02-LB01"
   vpc_id      = aws_vpc.tokyo.id
-  provider = aws.tokyo
+  provider    = aws.tokyo
 
   ingress {
     description = ""
@@ -78,7 +78,7 @@ resource "aws_security_group" "new-york-SG01-ASG01" {
   name        = "new-york-SG01-ASG01"
   description = "new-york-SG01-ASG01"
   vpc_id      = aws_vpc.new-york.id
-  provider = aws.new-york
+  provider    = aws.new-york
 
   ingress {
     description = ""
@@ -115,7 +115,7 @@ resource "aws_security_group" "new-york-SG02-LB01" {
   name        = "new-york-SG02-LB01"
   description = "new-york-SG02-LB01"
   vpc_id      = aws_vpc.new-york.id
-  provider = aws.new-york
+  provider    = aws.new-york
 
   ingress {
     description = ""
@@ -153,7 +153,7 @@ resource "aws_security_group" "london-SG01-ASG01" {
   name        = "london-SG01-ASG01"
   description = "london-SG01-ASG01"
   vpc_id      = aws_vpc.london.id
-  provider = aws.london
+  provider    = aws.london
 
   ingress {
     description = ""
@@ -190,7 +190,7 @@ resource "aws_security_group" "london-SG02-LB01" {
   name        = "london-SG02-LB01"
   description = "london-SG02-LB01"
   vpc_id      = aws_vpc.london.id
-  provider = aws.london
+  provider    = aws.london
 
   ingress {
     description = ""
@@ -228,7 +228,7 @@ resource "aws_security_group" "sao-paulo-SG01-ASG01" {
   name        = "sao-paulo-SG01-ASG01"
   description = "sao-paulo-SG01-ASG01"
   vpc_id      = aws_vpc.sao-paulo.id
-  provider = aws.sao-paulo
+  provider    = aws.sao-paulo
 
   ingress {
     description = ""
@@ -265,7 +265,7 @@ resource "aws_security_group" "sao-paulo-SG02-LB01" {
   name        = "sao-paulo-SG02-LB01"
   description = "sao-paulo-SG02-LB01"
   vpc_id      = aws_vpc.sao-paulo.id
-  provider = aws.sao-paulo
+  provider    = aws.sao-paulo
 
   ingress {
     description = ""
@@ -303,7 +303,7 @@ resource "aws_security_group" "australia-SG01-ASG01" {
   name        = "australia-SG01-ASG01"
   description = "australia-SG01-ASG01"
   vpc_id      = aws_vpc.australia.id
-  provider = aws.australia
+  provider    = aws.australia
 
   ingress {
     description = ""
@@ -340,7 +340,7 @@ resource "aws_security_group" "australia-SG02-LB01" {
   name        = "australia-SG02-LB01"
   description = "australia-SG02-LB01"
   vpc_id      = aws_vpc.australia.id
-  provider = aws.australia
+  provider    = aws.australia
 
   ingress {
     description = ""
@@ -378,7 +378,7 @@ resource "aws_security_group" "hong-kong-SG01-ASG01" {
   name        = "hong-kong-SG01-ASG01"
   description = "hong-kong-SG01-ASG01"
   vpc_id      = aws_vpc.hong-kong.id
-  provider = aws.hong-kong
+  provider    = aws.hong-kong
 
   ingress {
     description = ""
@@ -415,7 +415,7 @@ resource "aws_security_group" "hong-kong-SG02-LB01" {
   name        = "hong-kong-SG02-LB01"
   description = "hong-kong-SG02-LB01"
   vpc_id      = aws_vpc.hong-kong.id
-  provider = aws.hong-kong
+  provider    = aws.hong-kong
 
   ingress {
     description = ""
@@ -453,7 +453,7 @@ resource "aws_security_group" "california-SG01-ASG01" {
   name        = "california-SG01-ASG01"
   description = "california-SG01-ASG01"
   vpc_id      = aws_vpc.california.id
-  provider = aws.california
+  provider    = aws.california
 
   ingress {
     description = ""
@@ -490,7 +490,7 @@ resource "aws_security_group" "california-SG02-LB01" {
   name        = "california-SG02-LB01"
   description = "california-SG02-LB01"
   vpc_id      = aws_vpc.california.id
-  provider = aws.california
+  provider    = aws.california
 
   ingress {
     description = ""
@@ -528,7 +528,7 @@ resource "aws_security_group" "tokyo-test-SG01-ASG01" {
   name        = "tokyo-test-SG01-ASG01"
   description = "tokyo-test-SG01-ASG01"
   vpc_id      = aws_vpc.tokyo-testb.id
-  provider = aws.tokyo-testb
+  provider    = aws.tokyo-testb
   ingress {
     description = ""
     from_port   = 80
@@ -564,7 +564,7 @@ resource "aws_security_group" "tokyo-test-SG02-LB01" {
   name        = "tokyo-test-SG02-LB01"
   description = "tokyo-test-SG02-LB01"
   vpc_id      = aws_vpc.tokyo-testb.id
-  provider = aws.tokyo-testb
+  provider    = aws.tokyo-testb
 
   ingress {
     description = ""

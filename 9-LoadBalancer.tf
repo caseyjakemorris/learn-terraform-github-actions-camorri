@@ -4,13 +4,13 @@ resource "aws_lb" "tokyo_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.tokyo-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.tokyo-a-public.id,
     aws_subnet.tokyo-d-public.id,
   ]
-  provider = aws.tokyo
+  provider                   = aws.tokyo
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "TokyoLoadBalancer"
@@ -24,7 +24,7 @@ resource "aws_lb_listener" "tokyo-http" {
   load_balancer_arn = aws_lb.tokyo_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.tokyo
+  provider          = aws.tokyo
 
   default_action {
     type             = "forward"
@@ -44,13 +44,13 @@ resource "aws_lb" "new-york_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.new-york-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.new-york-a-public.id,
     aws_subnet.new-york-b-public.id,
   ]
-  provider = aws.new-york
+  provider                   = aws.new-york
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "NewYorkLoadBalancer"
@@ -64,7 +64,7 @@ resource "aws_lb_listener" "new-york-http" {
   load_balancer_arn = aws_lb.new-york_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.new-york
+  provider          = aws.new-york
 
   default_action {
     type             = "forward"
@@ -84,13 +84,13 @@ resource "aws_lb" "london_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.london-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.london-a-public.id,
     aws_subnet.london-b-public.id,
   ]
-  provider = aws.london
+  provider                   = aws.london
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "LondonLoadBalancer"
@@ -104,7 +104,7 @@ resource "aws_lb_listener" "london-http" {
   load_balancer_arn = aws_lb.london_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.london
+  provider          = aws.london
 
   default_action {
     type             = "forward"
@@ -122,13 +122,13 @@ resource "aws_lb" "sao-paulo_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.sao-paulo-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.sao-paulo-a-public.id,
     aws_subnet.sao-paulo-c-public.id,
   ]
-  provider = aws.sao-paulo
+  provider                   = aws.sao-paulo
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "SaoPauloLoadBalancer"
@@ -142,7 +142,7 @@ resource "aws_lb_listener" "sao-paulo-http" {
   load_balancer_arn = aws_lb.sao-paulo_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.sao-paulo
+  provider          = aws.sao-paulo
 
   default_action {
     type             = "forward"
@@ -160,13 +160,13 @@ resource "aws_lb" "australia_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.australia-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.australia-a-public.id,
     aws_subnet.australia-b-public.id,
   ]
-  provider = aws.australia
+  provider                   = aws.australia
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "AustraliaLoadBalancer"
@@ -180,7 +180,7 @@ resource "aws_lb_listener" "australia-http" {
   load_balancer_arn = aws_lb.australia_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.australia
+  provider          = aws.australia
 
   default_action {
     type             = "forward"
@@ -198,13 +198,13 @@ resource "aws_lb" "hong-kong_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.hong-kong-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.hong-kong-a-public.id,
     aws_subnet.hong-kong-b-public.id,
   ]
-  provider = aws.hong-kong
+  provider                   = aws.hong-kong
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "HongKongLoadBalancer"
@@ -218,7 +218,7 @@ resource "aws_lb_listener" "hong-kong-http" {
   load_balancer_arn = aws_lb.hong-kong_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.hong-kong
+  provider          = aws.hong-kong
 
   default_action {
     type             = "forward"
@@ -236,13 +236,13 @@ resource "aws_lb" "california_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.california-SG02-LB01.id]
-  subnets            = [
+  subnets = [
     aws_subnet.california-a-public.id,
     aws_subnet.california-c-public.id,
   ]
-  provider = aws.california
+  provider                   = aws.california
   enable_deletion_protection = false
-#Lots of death and suffering here, make sure it's false
+  #Lots of death and suffering here, make sure it's false
 
   tags = {
     Name    = "CaliforniaLoadBalancer"
@@ -256,7 +256,7 @@ resource "aws_lb_listener" "california-http" {
   load_balancer_arn = aws_lb.california_alb.arn
   port              = 80
   protocol          = "HTTP"
-  provider = aws.california
+  provider          = aws.california
 
   default_action {
     type             = "forward"

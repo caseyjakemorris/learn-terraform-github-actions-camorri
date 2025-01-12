@@ -7,7 +7,7 @@ terraform {
     }
   }
 
-    cloud {
+  cloud {
     organization = "sambaSaturday"
 
     workspaces {
@@ -18,42 +18,42 @@ terraform {
 
 provider "aws" {
   region = "ap-northeast-1"
-  alias = "tokyo"
+  alias  = "tokyo"
 }
 
 provider "aws" {
   region = "us-east-1"
-  alias = "new-york"
+  alias  = "new-york"
 }
 
 provider "aws" {
   region = "eu-west-2"
-  alias = "london"
+  alias  = "london"
 }
 
 provider "aws" {
   region = "sa-east-1"
-  alias = "sao-paulo"
+  alias  = "sao-paulo"
 }
 
 provider "aws" {
   region = "ap-southeast-2"
-  alias = "australia"
+  alias  = "australia"
 }
 
 provider "aws" {
   region = "ap-east-1"
-  alias = "hong-kong"
+  alias  = "hong-kong"
 }
 
 provider "aws" {
   region = "us-west-1"
-  alias = "california"
+  alias  = "california"
 }
 
 provider "aws" {
   region = "ap-northeast-1"
-  alias = "tokyo-testb"
+  alias  = "tokyo-testb"
 }
 
 # terraform {

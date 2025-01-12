@@ -1,8 +1,8 @@
 # Create a Launch Template for the Tokyo EC2 instances
 resource "aws_launch_template" "tokyo_LT" {
-  provider = aws.tokyo
+  provider      = aws.tokyo
   name_prefix   = "tokyo_LT"
-  image_id      = "ami-023ff3d4ab11b2525"  
+  image_id      = "ami-023ff3d4ab11b2525"
   instance_type = "t2.micro"
 
   key_name = "Tokyo-MyLinuxBox"
@@ -71,9 +71,9 @@ resource "aws_launch_template" "tokyo_LT" {
 
 # Create a Launch Template for the New York EC2 instances
 resource "aws_launch_template" "new-york_LT" {
-  provider = aws.new-york
+  provider      = aws.new-york
   name_prefix   = "new-york_LT"
-  image_id      = "ami-0453ec754f44f9a4a"  
+  image_id      = "ami-0453ec754f44f9a4a"
   instance_type = "t2.micro"
 
   key_name = "New-York-MyLinuxBox"
@@ -142,9 +142,9 @@ resource "aws_launch_template" "new-york_LT" {
 
 # Create a Launch Template for the London EC2 instances
 resource "aws_launch_template" "london_LT" {
-  provider = aws.london
+  provider      = aws.london
   name_prefix   = "london_LT"
-  image_id      = "ami-0c76bd4bd302b30ec"  
+  image_id      = "ami-0c76bd4bd302b30ec"
   instance_type = "t2.micro"
 
   key_name = "London-MyLinuxBox"
@@ -213,9 +213,9 @@ resource "aws_launch_template" "london_LT" {
 
 # Create a Launch Template for the Sao Paulo EC2 instances
 resource "aws_launch_template" "sao-paulo_LT" {
-  provider = aws.sao-paulo
+  provider      = aws.sao-paulo
   name_prefix   = "sao-paulo_LT"
-  image_id      = "ami-0c820c196a818d66a"  
+  image_id      = "ami-0c820c196a818d66a"
   instance_type = "t2.micro"
 
   key_name = "Sao-Paulo-MyLinuxBox"
@@ -284,9 +284,9 @@ resource "aws_launch_template" "sao-paulo_LT" {
 
 # Create a Launch Template for the Australia EC2 instances
 resource "aws_launch_template" "australia_LT" {
-  provider = aws.australia
+  provider      = aws.australia
   name_prefix   = "australia_LT"
-  image_id      = "ami-0146fc9ad419e2cfd"  
+  image_id      = "ami-0146fc9ad419e2cfd"
   instance_type = "t2.micro"
 
   key_name = "Australia-MyLinuxBox"
@@ -355,9 +355,9 @@ resource "aws_launch_template" "australia_LT" {
 
 # Create a Launch Template for the Hong Kong EC2 instances
 resource "aws_launch_template" "hong-kong_LT" {
-  provider = aws.hong-kong
+  provider      = aws.hong-kong
   name_prefix   = "hong-kong_LT"
-  image_id      = "ami-06f707739f2271995"  
+  image_id      = "ami-06f707739f2271995"
   instance_type = "t3.micro"
 
   key_name = "Hong-Kong-MyLinuxBox"
@@ -426,9 +426,9 @@ resource "aws_launch_template" "hong-kong_LT" {
 
 # Create a Launch Template for the California EC2 instances
 resource "aws_launch_template" "california_LT" {
-  provider = aws.california
+  provider      = aws.california
   name_prefix   = "california_LT"
-  image_id      = "ami-038bba9a164eb3dc1"  
+  image_id      = "ami-038bba9a164eb3dc1"
   instance_type = "t2.micro"
 
   key_name = "California-MyLinuxBox"
